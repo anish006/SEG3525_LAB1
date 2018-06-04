@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="match_parent"
+            android:layout_height="139dp"
+            app:srcCompat="@drawable/image" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="105px"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/fact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50px"
+                android:layout_weight="1"
+                android:text="- Montant de la facture :"
+                android:textSize="22sp"
+                app:fontFamily="sans-serif-condensed" />
+
+            <TextView
+                android:id="@+id/montant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="xxxx_1"
+                android:textSize="22sp"
+                app:fontFamily="sans-serif-condensed" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_marginTop="15px"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/pourb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50px"
+                android:layout_weight="1"
+                android:text="- Pourboire : "
+                android:textSize="22sp"
+                app:fontFamily="sans-serif-condensed" />
+
+            <TextView
+                android:id="@+id/pourboire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="400px"
+                android:layout_weight="1"
+                android:text="xxxx_2"
+                android:textSize="22sp"
+                app:fontFamily="sans-serif-condensed" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="15px"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50px"
+                android:layout_weight="1"
+                android:text="- Montant total : "
+                android:textSize="22sp"
+                app:fontFamily="sans-serif-condensed" />
+
+            <TextView
+                android:id="@+id/total_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="400px"
+                android:layout_weight="1"
+                android:text="xxxx_3"
+                android:textSize="22sp"
+                app:fontFamily="sans-serif-condensed" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:layout_marginTop="200px"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/pourb_pr_pers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50px"
+                android:layout_weight="1"
+                android:text="- Pourboire par personne : "
+                android:textSize="22sp"
+                app:fontFamily="sans-serif-condensed" />
+
+            <TextView
+                android:id="@+id/prb_par_pers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="300px"
+                android:layout_weight="1"
+                android:text="xxxx_4"
+                android:textSize="22sp"
+                app:fontFamily="sans-serif-condensed" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="15px"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50px"
+                android:layout_weight="1"
+                android:text="-Chaque personne paye : "
+                android:textSize="22sp"
+                app:fontFamily="sans-serif-condensed" />
+
+            <TextView
+                android:id="@+id/mont_par_pers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="300px"
+                android:layout_weight="1"
+                android:text="xxxx_5"
+                android:textSize="22sp"
+                app:fontFamily="sans-serif-condensed" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="400px"
+            android:layout_marginRight="400px"
+            android:layout_marginTop="30px"
+            android:text="Back"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
