@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
     EditText facture, pourcentage, number;
     TextView result_1, result_2, result_3, result_4, result_5;
-    Button buttonSubmit, btnBack;
+    Button buttonSubmit, btnBack, btnsettings, btnchoice, btnratings;
+
 
 
     @Override
@@ -70,6 +71,37 @@ public class MainActivity extends AppCompatActivity {
                                           }
 
 
+        });
+
+        btnsettings = (Button) findViewById(R.id.button2);
+
+        btnsettings.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View z){
+                setContentView(R.layout.activity_settings);
+
+                btnchoice = (Button) findViewById(R.id.button3);
+
+                btnchoice.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View w){
+                        setContentView(R.layout.activity_evaluation);
+
+                        btnratings = (Button) findViewById(R.id.eval);
+
+                        btnratings.setOnClickListener(new View.OnClickListener(){
+                            @Override
+                            public void onClick(View r){
+                                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent);
+                            }
+                        });
+
+                    }
+                });
+
+            }
         });
 
 

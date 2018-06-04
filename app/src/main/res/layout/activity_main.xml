@@ -13,10 +13,10 @@
         android:paddingTop="40px">
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/imageView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80px"
+            android:background="@android:color/darker_gray"
             app:srcCompat="@drawable/image" />
 
         <LinearLayout
@@ -131,14 +131,33 @@
                 android:paddingBottom="10px" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/button"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="450px"
-            android:layout_marginRight="450px"
-            android:layout_marginTop="70px"
-            android:text="submit"
-            android:textSize="18sp" />
+            android:layout_height="96dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80px"
+                android:layout_marginRight="80px"
+                android:layout_marginTop="70px"
+                android:layout_weight="1"
+                android:text="Settings"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80px"
+                android:layout_marginRight="80px"
+                android:layout_marginTop="70px"
+                android:layout_weight="1"
+                android:text="submit"
+                android:textSize="18sp" />
+
+        </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
