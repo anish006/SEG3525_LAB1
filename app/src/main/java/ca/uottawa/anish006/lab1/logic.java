@@ -7,6 +7,7 @@ public class logic{
     private int nombre;
     private double tip;
     private double total;
+    private float evaluation;
 
     public logic(Double amount, double percentage, int quantity){
         this.montant = amount;
@@ -32,6 +33,11 @@ public class logic{
         return total;
             }
 
+            public void setEvaluation(float eval){
+               evaluation = eval;
+            }
+
+
 
             public double getTipPerP(){
         return tip / nombre;
@@ -40,6 +46,12 @@ public class logic{
             public double getAmountPerP(){
                 return total / nombre;
             }
+
+
+            public double getTipbyEvaluation(){
+        tip = 10 +(evaluation * 2);
+        return tip ;
+           }
 
 
 

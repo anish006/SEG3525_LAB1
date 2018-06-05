@@ -9,6 +9,7 @@ import android.widget.EdgeEffect;
 import android.widget.TextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RatingBar;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -16,29 +17,29 @@ public class MainActivity extends AppCompatActivity {
     private double amount;
     private double percentage;
     private int quantity;
+    private RatingBar ratBar;
+    private float val;
+    private logic logique;
 
     EditText facture, pourcentage, number,  pourcentageperdef;
-    TextView result_1, result_2, result_3, result_4, result_5;
-    Button buttonSubmit, btnBack, btnsettings, btnchoice, btnratings;
+    TextView result_1, result_2, result_3, result_4, result_5, result_6;
+    Button buttonSubmit, btnBack, btnsettings, btnchoice, btnratings, btneval;
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
-        facture  = (EditText)findViewById(R.id.editText);
-        pourcentage  = (EditText)findViewById(R.id.editText3);
-        number  = (EditText)findViewById(R.id.editText5);
+        facture = (EditText) findViewById(R.id.editText);
+        pourcentage = (EditText) findViewById(R.id.editText3);
+        number = (EditText) findViewById(R.id.editText5);
 
-        //result = (TextView) findViewById(R.id.tvResult);
         buttonSubmit = (Button) findViewById(R.id.button);
 
 
-        /*
-            Submit Button
-        */
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -46,10 +47,11 @@ public class MainActivity extends AppCompatActivity {
                 amount = Double.parseDouble(facture.getText().toString());
                 percentage = Double.parseDouble(pourcentage.getText().toString()) / 100;
                 quantity = Integer.parseInt(number.getText().toString());
-                logic logique = new logic(amount, percentage, quantity);
+                 logique = new logic(amount, percentage, quantity);
+
                 setContentView(R.layout.activity_logic);
                 result_1 = (TextView) findViewById(R.id.montant);
-                result_1.setText("$ " + String.valueOf(logique.getAmount()) );
+                result_1.setText("$ " + String.valueOf(logique.getAmount()));
                 result_2 = (TextView) findViewById(R.id.pourboire);
                 result_2.setText("$ " + String.valueOf(logique.getTip()));
                 result_3 = (TextView) findViewById(R.id.total_amount);
@@ -61,64 +63,90 @@ public class MainActivity extends AppCompatActivity {
 
                 btnBack = (Button) findViewById(R.id.back);
 
-                btnBack.setOnClickListener(new View.OnClickListener(){
+                btnBack.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(View s){
+                    public void onClick(View s) {
                         Intent intent = new Intent(MainActivity.this, MainActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
                     }
                 });
-                                          }
+            }
 
 
         });
 
+
+
         btnsettings = (Button) findViewById(R.id.button2);
 
-        btnsettings.setOnClickListener(new View.OnClickListener(){
+        btnsettings.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View z){
+            public void onClick(View z) {
+
                 setContentView(R.layout.activity_settings);
 
                 pourcentageperdef = (EditText) findViewById(R.id.prcprdef);
 
-               /*Double perc = Double.parseDouble()
 
-                pourcentage.setText(Double());*/
 
                 btnchoice = (Button) findViewById(R.id.button3);
 
-                btnchoice.setOnClickListener(new View.OnClickListener(){
+                btnchoice.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(View w){
-                        setContentView(R.layout.activity_evaluation);
+                    public void onClick(View w) {
 
-                        btnratings = (Button) findViewById(R.id.eval);
+                        if(pourcentageperdef.getText().toString().trim().length() == 0) {
 
-                        btnratings.setOnClickListener(new View.OnClickListener(){
-                            @Override
-                            public void onClick(View r){
-                                Intent intent = new Intent(MainActivity.this, MainActivity.class);
-                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                startActivity(intent);
-                            }
-                        });
+                            setContentView(R.layout.activity_evaluation);
 
+                            ratBar = (RatingBar) findViewById(R.id.ratingBar);
+
+                            btnratings = (Button) findViewById(R.id.eval);
+
+                            btnratings.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View d) {
+
+                                    setContentView(R.layout.activity_hint);
+                                    result_6 = (TextView) findViewById(R.id.value);
+                                    result_6.setText((10 + ratBar.getRating() * 2) + " %");
+
+                                    btneval = (Button) findViewById(R.id.main);
+
+                                    btneval.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View o) {
+
+                                            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                            startActivity(intent);
+
+
+                                        }
+                                    });
+
+                                }
+                            });
+
+                        }
+
+                        else{
+                            ;
+                        }
                     }
                 });
 
+
             }
+
         });
-
-
-
-
-
-
-
-
 
     }
 
+
+
+
+
 }
+
