@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EdgeEffect;
 import android.widget.TextView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private double percentage;
     private int quantity;
 
-    EditText facture, pourcentage, number;
+    EditText facture, pourcentage, number,  pourcentageperdef;
     TextView result_1, result_2, result_3, result_4, result_5;
     Button buttonSubmit, btnBack, btnsettings, btnchoice, btnratings;
 
@@ -79,6 +80,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View z){
                 setContentView(R.layout.activity_settings);
+
+                pourcentageperdef = (EditText) findViewById(R.id.prcprdef);
+
+               /*Double perc = Double.parseDouble()
+
+                pourcentage.setText(Double());*/
 
                 btnchoice = (Button) findViewById(R.id.button3);
 
