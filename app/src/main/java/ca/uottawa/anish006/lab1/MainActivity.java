@@ -1,6 +1,9 @@
 package ca.uottawa.anish006.lab1;
 
+import android.content.Context;
 import android.content.Intent;
+
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,12 +13,9 @@ import android.widget.TextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
+import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+
 
 
 public class MainActivity extends AppCompatActivity {
@@ -26,12 +26,14 @@ public class MainActivity extends AppCompatActivity {
     private RatingBar ratBar;
     private float val;
     private logic logique;
+    public static final String MyPREFERENCES = "MyPrefs" ;
 
+
+
+    SharedPreferences sharedpreferences;
     EditText facture, pourcentage, number,  pourcentageperdef;
     TextView result_1, result_2, result_3, result_4, result_5, result_6;
     Button buttonSubmit, btnBack, btnsettings, btnchoice, btnratings, btneval;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +41,11 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
+        sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+
         facture = (EditText) findViewById(R.id.editText);
         pourcentage = (EditText) findViewById(R.id.editText3);
         number = (EditText) findViewById(R.id.editText5);
-
-        number.setText("4");
 
         buttonSubmit = (Button) findViewById(R.id.button);
 
@@ -140,7 +142,12 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                         else{
-                            ;
+                            /*
+                            *  kevin gatera
+                            *
+                            *
+                            *
+                            * */
                         }
                     }
                 });
@@ -151,6 +158,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    /*private void updateInfo(String devise, int pourcent_perdef) {
+        DatabaseReference dR = FirebaseDatabase.getInstance().getReference("infos");
+        setting set = new setting(devise, pourcent_perdef);
+        dR.child("devise").setValue(set.getDevise());
+        dR.child("pourcent_par_déf").setValue(set.getPourc());
+        Toast.makeText(getApplicationContext(), "Product updated", Toast.LENGTH_LONG).show();
+    }*/
 
 
 
