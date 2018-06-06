@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.content.SharedPreferences.Editor;
 import android.view.View;
 import android.widget.EdgeEffect;
 import android.widget.TextView;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        Editor editor = sharedpreferences.edit();
 
         facture = (EditText) findViewById(R.id.editText);
         pourcentage = (EditText) findViewById(R.id.editText3);
