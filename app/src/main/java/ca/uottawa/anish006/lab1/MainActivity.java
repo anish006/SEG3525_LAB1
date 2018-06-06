@@ -11,6 +11,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
         facture = (EditText) findViewById(R.id.editText);
         pourcentage = (EditText) findViewById(R.id.editText3);
         number = (EditText) findViewById(R.id.editText5);
+
+        number.setText("4");
 
         buttonSubmit = (Button) findViewById(R.id.button);
 
