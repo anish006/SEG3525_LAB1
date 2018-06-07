@@ -33,7 +33,7 @@ public class BillResultActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        billAmount = Double.parseDouble(intent.getStringExtra("billAmount"));
+        billAmount = Double.valueOf(Float.parseFloat(intent.getStringExtra("billAmount")));
         tipAmount = Double.parseDouble(intent.getStringExtra("tipAmount")) / 100;
         peopleNumber = Integer.parseInt(intent.getStringExtra("peopleNumber"));
 
