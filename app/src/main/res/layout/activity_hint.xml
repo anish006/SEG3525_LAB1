@@ -2,78 +2,81 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="207dp"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
 
-            <ImageView
-                android:id="@+id/imageView5"
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="207dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/dicaprio" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="96dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    android:text="Thanks for your evaluation !!"
+                    android:textSize="22sp"
+                    android:textStyle="italic" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/dicaprio" />
-        </LinearLayout>
+                android:layout_height="54dp"
+                android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="96dp"
-            android:layout_marginTop="180px"
-            android:orientation="vertical">
+                <TextView
+                    android:id="@+id/suggestedTipValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Your suggested tip is :"
+                    android:textSize="22sp"
+                    android:textStyle="italic" />
 
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="value"
+                    android:textSize="22sp"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="250px"
-                android:layout_weight="1"
-                android:text="Thanks for your evaluation !!"
-                android:textSize="22sp"
-                android:textStyle="italic" />
-
+                android:text="Back" />
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="200px"
-                android:layout_weight="1"
-                android:text="Your suggested tip is :"
-                android:textSize="22sp"
-                android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="100px"
-                android:layout_weight="1"
-                android:text="value"
-                android:textSize="22sp"
-                android:textStyle="italic" />
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/main"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="450px"
-            android:layout_marginRight="450px"
-            android:layout_marginTop="180px"
-            android:text="Back" />
     </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

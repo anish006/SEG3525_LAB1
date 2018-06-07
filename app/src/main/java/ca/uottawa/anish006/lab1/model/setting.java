@@ -1,4 +1,4 @@
-package ca.uottawa.anish006.lab1;
+package ca.uottawa.anish006.lab1.model;
 
 public class setting {
 

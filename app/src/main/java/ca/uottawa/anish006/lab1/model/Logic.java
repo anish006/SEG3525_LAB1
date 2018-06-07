@@ -1,6 +1,6 @@
-package ca.uottawa.anish006.lab1;
+package ca.uottawa.anish006.lab1.model;
 
-public class logic{
+public class Logic {
 
     private  double montant;
     private double pourcent;
@@ -9,7 +9,7 @@ public class logic{
     private double total;
     private float evaluation;
 
-    public logic(Double amount, double percentage, int quantity){
+    public Logic(Double amount, double percentage, int quantity){
         this.montant = amount;
         this.pourcent = percentage;
         this.nombre = quantity;
