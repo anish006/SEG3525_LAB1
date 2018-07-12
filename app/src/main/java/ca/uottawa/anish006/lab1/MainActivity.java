@@ -1,8 +1,10 @@
 package ca.uottawa.anish006.lab1;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -53,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
             tipAmount.setText(defaultTipAmount.toString());
         }
 
+
+
         settingsButton = findViewById(R.id.settingsButton);
 
         settingsButton.setOnClickListener(new View.OnClickListener() {
@@ -71,14 +75,37 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplication(), BillResultActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                if (billAmount.getText().toString().trim().length() == 0 ||
+                        tipAmount.getText().toString().trim().length() == 0 ||
+                        peopleNumber.getText().toString().trim().length() == 0){
 
-                intent.putExtra("billAmount", billAmount.getText().toString());
-                intent.putExtra("tipAmount", tipAmount.getText().toString());
-                intent.putExtra("peopleNumber", peopleNumber.getText().toString());
+                    AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(MainActivity.this);
 
-                startActivity(intent);
+                    dlgAlert.setMessage("You must set all fields");
+                    dlgAlert.setTitle("Error Message...");
+                    dlgAlert.setPositiveButton("OK", null);
+                    dlgAlert.setCancelable(true);
+                    dlgAlert.create().show();
+
+                    dlgAlert.setPositiveButton("Ok",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                }
+                            });
+                }
+
+                else{
+
+                    Intent intent = new Intent(getApplication(), BillResultActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                    intent.putExtra("billAmount", billAmount.getText().toString());
+                    intent.putExtra("tipAmount", tipAmount.getText().toString());
+                    intent.putExtra("peopleNumber", peopleNumber.getText().toString());
+
+                    startActivity(intent);
+                }
             }
         });
 
